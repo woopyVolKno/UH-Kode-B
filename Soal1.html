@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Kendaraan</title>
+  </head>
+  <body>
+    <h1>Data Kendaraan</h1>
+
+    <button onclick="tampilkanData()">Tampilkan Data Kendaraan</button>
+    <button onclick="tambahKendaraan()">Tambah Kendaraan</button>
+
+    <!-- Input untuk menambah kendaraan baru -->
+    <input
+      type="text"
+      id="kendaraanBaru"
+      placeholder="Masukkan kendaraan baru"
+    />
+
+    <script>
+      var kendaraan = [
+        "Mobil",
+        "Motor",
+        "Sepeda",
+        "Kapal",
+        "Pesawat",
+        "Helikopter",
+        "Kereta",
+        "Truk",
+        "Roket",
+        "Delman",
+      ];
+
+      function tampilkanData() {
+        console.log("Data Kendaraan:");
+        for (var i = 0; i < kendaraan.length; i++) {
+          console.log(i + 1 + ". " + kendaraan[i]);
+        }
+
+        var indexMobil = kendaraan.indexOf("Mobil");
+        console.log("Mobil berada pada indeks ke-" + indexMobil);
+      }
+
+      function tambahKendaraan() {
+        var kendaraanBaru = document.getElementById("kendaraanBaru").value;
+
+        if (kendaraanBaru !== null && kendaraanBaru !== "") {
+          kendaraan.push(kendaraanBaru);
+          console.log("Kendaraan baru berhasil ditambahkan: " + kendaraanBaru);
+
+          tampilkanData();
+        } else {
+          console.log("Input kendaraan baru dibatalkan atau kosong.");
+        }
+      }
+
+      function hapusKendaraan() {
+        var kendaraanYangDihapus = kendaraan.shift();
+        console.log("Kendaraan yang dihapus: " + kendaraanYangDihapus);
+
+        tampilkanData();
+      }
+    </script>
+  </body>
+</html>

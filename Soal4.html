@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <form>
+    <label for="angka1">Masukkan Angka Pertama:</label>
+    <input type="number" id="angka1" required>
+    <br>
+
+    <label for="angka2">Masukkan Angka Kedua:</label>
+    <input type="number" id="angka2" required>
+    <br>
+
+    <button type="button" onclick="hitungPenjumlahan()">Penjumlahan</button>
+    <button type="button" onclick="hitungPengurangan()">Pengurangan</button>
+    <button type="button" onclick="hitungPerkalian()">Perkalian</button>
+    <button type="button" onclick="hitungPembagian()">Pembagian</button>
+    <button type="button" onclick="cariBilangan()">Bilangan</button>
+  </form>
+
+  <div id="hasilPerhitungan"></div>
+
+  <script>
+    function hitungPenjumlahan() {
+      var angka1 = parseFloat(document.getElementById('angka1').value);
+      var angka2 = parseFloat(document.getElementById('angka2').value);
+      var hasil = angka1 + angka2;
+      document.getElementById('hasilPerhitungan').innerHTML = 'Hasil Penjumlahan: ' + hasil;
+    }
+
+    function hitungPengurangan() {
+      var angka1 = parseFloat(document.getElementById('angka1').value);
+      var angka2 = parseFloat(document.getElementById('angka2').value);
+      var hasil = angka1 - angka2;
+      document.getElementById('hasilPerhitungan').innerHTML = 'Hasil Pengurangan: ' + hasil;
+    }
+
+    function hitungPerkalian() {
+      var angka1 = parseFloat(document.getElementById('angka1').value);
+      var angka2 = parseFloat(document.getElementById('angka2').value);
+      var hasil = angka1 * angka2;
+      document.getElementById('hasilPerhitungan').innerHTML = 'Hasil Perkalian: ' + hasil;
+    }
+
+    function hitungPembagian() {
+      var angka1 = parseFloat(document.getElementById('angka1').value);
+      var angka2 = parseFloat(document.getElementById('angka2').value);
+      var hasil = angka1 / angka2;
+      document.getElementById('hasilPerhitungan').innerHTML = 'Hasil Pembagian: ' + hasil;
+    }
+
+    function cariBilangan() {
+      var angka1 = parseFloat(document.getElementById('angka1').value);
+      var angka2 = parseFloat(document.getElementById('angka2').value);
+      document.getElementById('hasilPerhitungan').innerHTML = 'Angka yang Lebih Besar: ' + Math.max(angka1, angka2);
+    }
+  </script>
+
+</body>
+</html>

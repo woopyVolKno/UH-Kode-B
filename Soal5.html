@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+
+<!-- Input fields -->
+<label for="nama">Nama:</label>
+<input type="text" id="nama" placeholder="John Doe"><br>
+
+<label for="umur">Umur:</label>
+<input type="text" id="umur" placeholder="30"><br>
+
+<label for="alamat">Alamat:</label>
+<input type="text" id="alamat" placeholder="Jln. Malioboro, Yogjakarta"><br>
+
+<label for="hobi">Hobi:</label>
+<input type="text" id="hobi" placeholder="aming"><br>
+
+<!-- Button untuk memanggil fungsi -->
+<button onclick="tampilkanKalimat()">Tampilkan Kalimat</button>
+
+<!-- Tempat menampilkan hasil kalimat -->
+<div id="hasilKalimat"></div>
+
+<!-- Script JavaScript -->
+<script>
+  function buatKalimat(nama, umur, alamat, hobi) {
+    // Menggabungkan parameter menjadi satu kalimat
+    var kalimat = `Nama saya ${nama} umur saya ${umur} tahun, alamat saya di ${alamat} dan saya punya hobi yaitu ${hobi}.`;
+
+    // Mengembalikan kalimat
+    return kalimat;
+  }
+
+  
+  function tampilkanKalimat() {
+    // Mengambil nilai dari input fields
+    var nama = document.getElementById('nama').value;
+    var umur = document.getElementById('umur').value;
+    var alamat = document.getElementById('alamat').value;
+    var hobi = document.getElementById('hobi').value;
+
+    // Memanggil fungsi buatKalimat
+    var kalimatHasil = buatKalimat(nama, umur, alamat, hobi);
+
+    // Menampilkan hasil kalimat di dalam div dengan id "hasilKalimat"
+    document.getElementById('hasilKalimat').innerHTML = kalimatHasil;
+  }
+</script>
+
+</body>
+</html>
+
+  </body>
+</html>

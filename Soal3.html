@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+    <label for="pilihanMenu">Pilih Menu:</label>
+    <select id="pilihanMenu" required>
+        <option value="makanan">Makanan</option>
+        <option value="minuman">Minuman</option>
+    </select>
+    <button type="button" onclick="tampilkanMenu()">Tampilkan Menu</button>
+</form>
+
+<div id="hasilMenu">Pilih menu di atas untuk menampilkan daftar.</div>
+
+<script>
+    function tampilkanMenu() {
+        var pilihanMenu = document.getElementById('pilihanMenu').value;
+
+        var daftarMenu = '';
+
+        if (pilihanMenu === 'makanan') {
+            daftarMenu = 'Daftar Makanan:<br>' +
+                '- Bakso<br>' +
+                '- Mie Ayam<br>' +
+                '- Soto<br>' +
+                '- Kambing Guling<br>' +
+                '- Ayam Bakar<br>' +
+                '- Sate<br>' +
+                '- Mie Goreng<br>' +
+                '- Mendoan';
+        } else if (pilihanMenu === 'minuman') {
+            daftarMenu = 'Daftar Minuman:<br>' +
+                '- Es Milo<br>' +
+                '- Es Teh Manis<br>' +
+                '- Es Jeruk<br>' +
+                '- Es Campur<br>' +
+                '- Es Kopi Susu<br>' +
+                '- Es Teh Tawar<br>' +
+                '- Es Dawet';
+        } else {
+            daftarMenu = 'Pilihan tidak valid. Silahkan pilih menu yang benar.';
+        }
+
+        document.getElementById('hasilMenu').innerHTML = daftarMenu;
+    }
+</script>
+
+</body>
+</html>
